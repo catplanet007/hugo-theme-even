@@ -37,36 +37,41 @@ figure.highlight {
       position: absolute;
       top: 0;
       right: 0;
-      left: 0;
-      padding: 2px 15px;
+      // left: 0;
+      padding: 2px 6px;
+      margin: 0 20px;
       font-size: $code-font-size;
       font-weight: bold;
-      color: yellow;
-      background: darken(#282c34, 3%);
+      color: black;
+      text-align: right;
+      background: white;
+      border-radius: 0px 0px 5px 5px;
       content: 'Code';
     }
   }
 
   @each $sign, $text in $code-type-list {
     &.#{$sign} > table::after {
-      content: $text;
+      content: nth($text, 1);
+      color: nth($text, 2);
+      background: nth($text, 3);
     }
   }
 
   .code {
     pre {
       margin: 0;
-      padding: 30px 10px 10px;
+      padding: 10px  10px;
     }
   }
 
   .gutter {
-    width: 10px;
+    width: 0px;
     color: $gray;
 
     pre {
-      margin: 0;
-      padding: 30px 7px 10px;
+      margin: 2px;
+      // padding: 30px 7px 10px;
     }
   }
 

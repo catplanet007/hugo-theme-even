@@ -145,13 +145,13 @@ Even.highlight = function() {
     const block = blocks[i];
     const rootElement = block.parentElement;
     const lineCodes = block.innerHTML.split(/\n/);
-    if (lineCodes[lineCodes.length - 1] === '') lineCodes.pop();
+    if (lineCodes[lineCodes.length - 1] === '' || lineCodes[lineCodes.length - 1] === '</span>') lineCodes.pop();
     const lineLength = lineCodes.length;
 
     let codeLineHtml = '';
-    for (let i = 0; i < lineLength; i++) {
-      codeLineHtml += `<div class="line">${i + 1}</div>`;
-    }
+    // for (let i = 0; i < lineLength; i++) {
+    //   codeLineHtml += `<div class="line">${i + 1}</div>`;
+    // }
 
     let codeHtml = '';
     for (let i = 0; i < lineLength; i++) {
